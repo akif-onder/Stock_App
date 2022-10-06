@@ -56,8 +56,8 @@ class Transaction(UpdateCreate):
     transaction = models.SmallIntegerField(choices=TRANSACTION)
     product = models.ForeignKey(Product, on_delete=models.CASCADE,related_name='transactions' )
     quantity = models.SmallIntegerField()
-    price = models.DecimalField(max_digit=6, decimal_places=2)
-    price_total = models.DecimalField(max_digit=9, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price_total = models.DecimalField(max_digits=9, decimal_places=2)
 
     def __str__(self):
         return f'{self.transaction} - {self.product} - {self.quantity}'
